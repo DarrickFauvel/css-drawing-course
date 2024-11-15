@@ -1,0 +1,66 @@
+:root {
+  --color-green1: #1fb67c;
+  --color-green2: #20bc7d;
+  --color-green3: #26c893;
+  --color-green4: #55ddb9;
+
+  --facet-color1: var(--color-green1);
+  --facet-color2: var(--color-green2);
+  --facet-color3: var(--color-green3);
+  --facet-color4: var(--color-green4);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: #233637;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.diamond {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  transform: rotate(45deg);
+
+  .facet {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-top: 50px solid var(--facet-color1);
+    border-right: 50px solid var(--facet-color2);
+    border-bottom: 50px solid var(--facet-color3);
+    border-left: 50px solid var(--facet-color4);
+
+    &:nth-child(1) {
+      top: 0;
+      left: 0;
+      border-top: 50px solid transparent;
+      border-left: 50px solid transparent;
+    }
+
+    &:nth-child(2) {
+      top: 0;
+      left: 50%;
+    }
+
+    &:nth-child(3) {
+      top: 50%;
+      left: 0;
+    }
+
+    &:nth-child(4) {
+      top: 50%;
+      left: 50%;
+    }
+  }
+}
